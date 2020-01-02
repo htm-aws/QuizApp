@@ -25,3 +25,11 @@
     font-size: 1.8rem;
     width: 100%;
 }
+
+.correct {
+    background-color: lightgreen;
+}
+
+.incorrect {
+    background-color: lightcoral;
+}
