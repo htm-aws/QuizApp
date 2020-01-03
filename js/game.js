@@ -5,6 +5,7 @@ console.log(question)
 
 const questionCounter = document.getElementById('questionCounter');
 const scoreText = document.getElementById('score');
+const progressBarFull = document.getElementById('progressBarFull');
 
 let currQuestion = {};
 let acceptingAnswers = false;
@@ -61,11 +62,15 @@ startGame = () => {
 
 getNewQuestion = () => {
     if (availableQuestions.length === 0 || questionCount >= MAX_QUESTION) {
-        return window.location.assign("/end.html");
+        //
+        localStorage.setItem("mostRecentScore", score);
+        //
+        return window.location.href = "end.html";
     }
 
     questionCount++;
-    questionCounter.innerHTML = `${questionCount}/${MAX_QUESTION}`;
+    questionCounter.innerHTML = `Question ${questionCount}/${MAX_QUESTION}`;
+    progressBarFull.style.width = `${(questionCount/MAX_QUESTION) * 100}%`;
 
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currQuestion = availableQuestions[questionIndex];

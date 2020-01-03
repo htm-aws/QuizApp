@@ -4,15 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>End</title>
+    <title>Congrats!</title>
     <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
     <div class="container">
-            <div id="home" class="flex-center flex-column">
-        <h1>Giỏi quá :))</h1>
+        <div id="end" class="flex-center flex-column">
+            <h1 id="finalScore">0</h1>
+            <h1>Giỏi quá :))</h1>
+            <form>
+                <input type="text" name="username" id="username" placeholder="username"/>
+                <button disabled type="submit" class="btn" id="saveScoreBtn" onclick="saveHighScore(event)">Save</button>
+            </form>
+            <a class="btn" href="game.html">Play Again</a>
+            <a class="btn" href="index.html">Go Home</a>
         </div>
     </div>
-    
+
+    <script src="js/end.js">
+
+    </script>
 </body>
 </html>
